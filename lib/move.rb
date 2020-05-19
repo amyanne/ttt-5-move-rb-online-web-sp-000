@@ -1,3 +1,4 @@
+require 'pry'
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -7,3 +8,18 @@ def display_board(board)
 end
 
 # code your input_to_index and move method here!
+def input_to_index(input)
+   input = input.to_i
+  input = input - 1
+end
+
+def update_array_at_with(array, index, value)
+  array[index] = value
+end
+
+def move(board, input, player = "X")
+  input = input_to_index(input)
+  update_array_at_with(board, input, player)
+  binding.pry
+  
+end 
